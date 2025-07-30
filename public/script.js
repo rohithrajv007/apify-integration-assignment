@@ -138,8 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /**
      * *** UPDATED FUNCTION ***
-     * If a schema exists, builds a form.
-     * If not, provides specific inputs for the web-scraper or a generic JSON textarea.
+     * Hides the pageFunction input from the UI.
      */
     function generateFormFromSchema(schema) {
         inputSchemaForm.innerHTML = '';
@@ -160,20 +159,8 @@ document.addEventListener('DOMContentLoaded', () => {
             urlGroup.appendChild(urlLabel);
             urlGroup.appendChild(urlInput);
             inputSchemaForm.appendChild(urlGroup);
-
-            // Create pageFunction textarea
-            const pfGroup = document.createElement('div');
-            pfGroup.className = 'input-group';
-            const pfLabel = document.createElement('label');
-            pfLabel.setAttribute('for', 'pageFunctionInput');
-            pfLabel.textContent = 'Page Function';
-            const pfTextarea = document.createElement('textarea');
-            pfTextarea.id = 'pageFunctionInput';
-            pfTextarea.name = 'pageFunctionInput';
-            pfTextarea.value = "async function pageFunction(context) {\n    const { request, log, jQuery: $ } = context;\n    const title = $('title').text();\n    log.info(`URL: ${request.url}, Title: ${title}`);\n    return {\n        url: request.url,\n        title\n    };\n}";
-            pfGroup.appendChild(pfLabel);
-            pfGroup.appendChild(pfTextarea);
-            inputSchemaForm.appendChild(pfGroup);
+            
+            // The pageFunction textarea is no longer created here, hiding it from the user.
             return;
         }
         
@@ -228,16 +215,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /**
      * *** UPDATED FUNCTION ***
-     * Gathers data from the specific web-scraper inputs, the generic JSON input, or the generated form.
+     * Hardcodes the pageFunction when gathering form data.
      */
     function getFormData() {
         // Handle the specific web-scraper case
         const startUrlInput = document.getElementById('startUrlInput');
-        const pageFunctionInput = document.getElementById('pageFunctionInput');
-        if (startUrlInput && pageFunctionInput) {
+        if (startUrlInput) {
+            // The pageFunction is now hardcoded here, not read from the UI.
+            const pageFunction = "async function pageFunction(context) {\n    const { request, log, jQuery: $ } = context;\n    const title = $('title').text();\n    log.info(`URL: ${request.url}, Title: ${title}`);\n    return {\n        url: request.url,\n        title\n    };\n}";
             return {
                 "startUrls": [{ "url": startUrlInput.value }],
-                "pageFunction": pageFunctionInput.value
+                "pageFunction": pageFunction
             };
         }
 
