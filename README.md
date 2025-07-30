@@ -25,7 +25,7 @@ The user starts by entering their Apify API key and clicking "Fetch Actors".
 
 > **💡 Your Screenshot Here:**
 > _(Insert a screenshot of the initial screen with the API key input)_
-> ![Step 1: Authentication](/Screenshot 2025-07-30 210135.png)
+> ![Step 1: Authentication](./screenshots/Screenshot%202025-07-30%20210135.png)
 
 ### **2. Select an Actor**
 
@@ -33,7 +33,7 @@ Upon successful authentication, a dropdown appears, populated with the user's ac
 
 > **💡 Your Screenshot Here:**
 > _(Insert a screenshot showing the populated actor dropdown)_
-> ![Step 2: Actor Selection](link_to_your_screenshot_2.png)
+> ![Step 2: Actor Selection](./screenshots/Screenshot%202025-07-30%20210155.png)
 
 ### **3. Provide Inputs**
 
@@ -41,7 +41,7 @@ When an actor is selected, the application dynamically generates the appropriate
 
 > **💡 Your Screenshot Here:**
 > _(Insert a screenshot of the simplified URL input form for the web-scraper)_
-> ![Step 3: Dynamic Input Form](link_to_your_screenshot_3.png)
+> ![Step 3: Dynamic Input Form](./screenshots/Screenshot%202025-07-30%20210206.png)
 
 ### **4. View the Results**
 
@@ -49,7 +49,7 @@ After clicking "Run Actor," the application displays a loader and then presents 
 
 > **💡 Your Screenshot Here:**
 > _(Insert a screenshot showing the final JSON result)_
-> ![Step 4: Results](link_to_your_screenshot_4.png)
+> ![Step 4: Results](./screenshots/Screenshot%202025-07-30%20210228.png)
 
 ---
 
