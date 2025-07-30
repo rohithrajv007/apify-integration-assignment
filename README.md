@@ -25,7 +25,7 @@ The user starts by entering their Apify API key and clicking "Fetch Actors".
 
 > **💡 Your Screenshot Here:**
 > _(Insert a screenshot of the initial screen with the API key input)_
-> ![Step 1: Authentication](link_to_your_screenshot_1.png)
+> ![Step 1: Authentication](/Screenshot 2025-07-30 210135.png)
 
 ### **2. Select an Actor**
 
