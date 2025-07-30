@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apify Actor Runner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Apify Actor Runner</h1>
+            <p>Enter your Apify API key to fetch your actors, choose one, provide inputs, and see the results.</p>
+        </header>
+
+        <main>
+            <!-- Step 1: API Key Input -->
+            <section id="apiKeySection" class="card">
+                <h2>Step 1: Authenticate</h2>
+                <div class="input-group">
+                    <label for="apiKey">Apify API Key</label>
+                    <input type="password" id="apiKeyInput" placeholder="Enter your Apify API key">
+                    <button id="fetchActorsBtn">Fetch Actors</button>
+                </div>
+            </section>
+
+            <!-- Step 2: Actor Selection -->
+            <section id="actorSelectionSection" class="card hidden">
+                <h2>Step 2: Select an Actor</h2>
+                <div class="input-group">
+                    <label for="actorSelect">Choose an actor</label>
+                    <select id="actorSelect">
+                        <option value="">-- Please select an actor --</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- Step 3: Dynamic Input Form -->
+            <section id="inputSchemaSection" class="card hidden">
+                <h2>Step 3: Provide Inputs</h2>
+                <form id="inputSchemaForm">
+                    <!-- Input fields will be dynamically generated here by JavaScript -->
+                </form>
+                <button id="runActorBtn">Run Actor</button>
+            </section>
+
+            <!-- Step 4: Results Display -->
+            <section id="resultsSection" class="card hidden">
+                <h2>Results</h2>
+                <div id="loader" class="loader hidden"></div>
+                <div id="errorMessage" class="error-message hidden"></div>
+                <pre id="resultsOutput">
+                    <!-- Actor run results will be displayed here -->
+                </pre>
+            </section>
+        </main>
+
+        <footer>
+            <p>Built for the Integration Developer Assignment.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
